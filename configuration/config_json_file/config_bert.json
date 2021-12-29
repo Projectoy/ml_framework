@@ -1,0 +1,33 @@
+{
+  "model_name": "bert",
+  "model" : {
+    "d_dim": 768,
+    "ffn_inner": 3072,
+    "attn_heads": 12,
+    "attn_head_size": 64,
+    "dropout_rate": 0.1,
+    "layers": 12
+  },
+  "optimizer" : {
+    "name": "adamW",
+    "beta_1" : 0.9,
+    "beta_2" : 0.98,
+    "epsilon" : 1e-6,
+    "weight_decay" : 0.01
+  },
+  "learning": {
+    "learning_rate" : 6e-4,
+    "total_steps" : 3000000,
+    "warmup_steps" : 300000,
+    "model_save_ckpt_file_path_linux_mac" : "model_save/bert.ckpt",
+    "model_save_ckpt_file_path_win" : "model_save\\bert.ckpt",
+    "resume": false,
+    "model_load_ckpt_file_path_linux_mac": "model",
+    "model_load_ckpt_file_path_win" : "model_save\\bert.ckpt"
+  },
+  "environment": {
+    "data_parallel": 8,
+    "num_machine": 1,
+    "cpu_mode" : false
+  }
+}
